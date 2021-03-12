@@ -126,7 +126,7 @@
             if(paddleX < 0) paddleX = 0;
         }
         //if(the ball hits the top or the bottom, reverse the direction)
-        if(y + dy < ballRadius || y + dy > canvas.height - ballRadius){
+        if(y  < ballRadius || y  > canvas.height - ballRadius){
 			if(y + dy < ballRadius) dy = -dy;
 			else {
 				//if the ball hits the paddle
@@ -139,7 +139,7 @@
 			}
 		}
         //if(the ball hits the left or the right, reverse the direction)
-        if(x + dx < ballRadius || x + dx > canvas.width - ballRadius) dx = -dx;
+        if(x  < ballRadius || x > canvas.width - ballRadius) dx = -dx;
 		//requestAnimationFrame(draw);
     }
     var drawBall = () =>{
