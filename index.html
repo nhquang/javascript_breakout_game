@@ -28,6 +28,8 @@
 	while(difficulty !== "1" && difficulty !== "2" && difficulty !== "3")
 		difficulty = prompt("Enter 1 to choose Easy, 2 to choose Medium, 3 to choose Hard:");
 
+	var bg = new Image();
+	bg.src = "background.png";
 	
     //coordinates of the ball
     var x = canvas.width / 2;
@@ -100,6 +102,7 @@
 
     var draw = ()=>{
         ctx.clearRect(0,0,canvas.width,canvas.height);
+		ctx.drawImage(bg,0,0);
         drawBall();
         drawPaddle();
 		drawBricks();
@@ -145,7 +148,7 @@
     var drawBall = () =>{
         ctx.beginPath();
         ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-        ctx.fillStyle = "blue";
+        ctx.fillStyle = "yellow";
         ctx.fill();
         ctx.closePath();
     };
